@@ -1,7 +1,34 @@
-import {Component} from 'angular2/core';
+import { Component }       from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import { MyImageService} from './services/my-image.service';
+import { MyTripService } from './services/my-trip.service';
+import {MyImageComponent} from './components/my-image.component';
+import {MyTripComponent} from './components/my-trip.component';
 
 @Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+  selector: 'my-app',
+  templateUrl: "app/html/base-template.html",
+  directives: [ROUTER_DIRECTIVES],
+  providers: [
+			ROUTER_PROVIDERS,
+      MyImageService,
+      MyTripService
+			]
 })
-export class AppComponent { }
+
+@RouteConfig ([
+  {
+		path : '/trips',
+		name: 'Trip',
+		component: MyTripComponent
+	},
+  {
+		path : '/images',
+		name: 'Image',
+		component: MyImageComponent,
+    useAsDefault: true
+	},
+])
+export class AppComponent {
+  title = 'Tour of Heroes';
+}

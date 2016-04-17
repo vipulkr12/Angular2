@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './services/my-image.service', './services/my-trip.service', './components/my-image.component', './components/my-trip.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,22 +10,57 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, router_1, my_image_service_1, my_trip_service_1, my_image_component_1, my_trip_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (my_image_service_1_1) {
+                my_image_service_1 = my_image_service_1_1;
+            },
+            function (my_trip_service_1_1) {
+                my_trip_service_1 = my_trip_service_1_1;
+            },
+            function (my_image_component_1_1) {
+                my_image_component_1 = my_image_component_1_1;
+            },
+            function (my_trip_component_1_1) {
+                my_trip_component_1 = my_trip_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.title = 'Tour of Heroes';
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1>'
-                    }), 
+                        templateUrl: "app/html/base-template.html",
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        providers: [
+                            router_1.ROUTER_PROVIDERS,
+                            my_image_service_1.MyImageService,
+                            my_trip_service_1.MyTripService
+                        ]
+                    }),
+                    router_1.RouteConfig([
+                        {
+                            path: '/trips',
+                            name: 'Trip',
+                            component: my_trip_component_1.MyTripComponent
+                        },
+                        {
+                            path: '/images',
+                            name: 'Image',
+                            component: my_image_component_1.MyImageComponent,
+                            useAsDefault: true
+                        },
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;

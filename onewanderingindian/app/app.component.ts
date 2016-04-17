@@ -8,15 +8,15 @@ import {MyTripService} from './services/my-trip.service';
 @Component({
   selector: 'my-app',
   templateUrl: "app/html/base-template.html",
-  /*directives: [ROUTER_DIRECTIVES],*/
+  directives: [ROUTER_DIRECTIVES],
   providers: [
-			/*ROUTER_PROVIDERS,*/
+			ROUTER_PROVIDERS,
 			MyImageService,
       MyTripService
     ]
 })
 
-/*@RouteConfig ([
+@RouteConfig ([
 	{
 		path : '/:tripId',
 		name: 'TripLink',
@@ -28,7 +28,7 @@ import {MyTripService} from './services/my-trip.service';
 		component: MyImageComponent,
     useAsDefault: true
 	}
-])*/
+])
 export class AppComponent {
   title = 'Tour of Heroes';
 }

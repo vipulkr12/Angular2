@@ -1,4 +1,4 @@
-System.register(['angular2/core', './services/my-image.service', './services/my-trip.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './components/my-trip.component', './components/my-image.component', './services/my-image.service', './services/my-trip.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,21 @@ System.register(['angular2/core', './services/my-image.service', './services/my-
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, my_image_service_1, my_trip_service_1;
+    var core_1, router_1, my_trip_component_1, my_image_component_1, my_image_service_1, my_trip_service_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (my_trip_component_1_1) {
+                my_trip_component_1 = my_trip_component_1_1;
+            },
+            function (my_image_component_1_1) {
+                my_image_component_1 = my_image_component_1_1;
             },
             function (my_image_service_1_1) {
                 my_image_service_1 = my_image_service_1_1;
@@ -32,13 +41,26 @@ System.register(['angular2/core', './services/my-image.service', './services/my-
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: "app/html/base-template.html",
-                        /*directives: [ROUTER_DIRECTIVES],*/
+                        directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
-                            /*ROUTER_PROVIDERS,*/
+                            router_1.ROUTER_PROVIDERS,
                             my_image_service_1.MyImageService,
                             my_trip_service_1.MyTripService
                         ]
-                    }), 
+                    }),
+                    router_1.RouteConfig([
+                        {
+                            path: '/:tripId',
+                            name: 'TripLink',
+                            component: my_trip_component_1.MyTripComponent
+                        },
+                        {
+                            path: '/:tripId/:imageId',
+                            name: 'Dashboard',
+                            component: my_image_component_1.MyImageComponent,
+                            useAsDefault: true
+                        }
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
