@@ -37,11 +37,7 @@ System.register(['angular2/core', './hero.service', './heroes.component', 'angul
                 function AppComponent() {
                     this.title = 'Tour of Heroes';
                 }
-                AppComponent.prototype.ngOnInit = function () {
-                    /*let tourId =+ this._routeParams.get("id");
-                    this._myTripservice.getTripFromId(tourId)
-                    .then(currentTrip => this.currentTrip = currentTrip);*/
-                };
+                AppComponent.prototype.ngOnInit = function () { };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './services/my-image.service', './services/my-trip.service', './components/my-image.component', './components/my-trip.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './services/my-image.service', './services/my-trip.service', './components/my-image.component', './components/my-trip.component', './services/my-utility.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './services/my-image.servic
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, my_image_service_1, my_trip_service_1, my_image_component_1, my_trip_component_1;
+    var core_1, router_1, my_image_service_1, my_trip_service_1, my_image_component_1, my_trip_component_1, my_utility_service_1;
     var AppComponent;
     return {
         setters:[
@@ -31,17 +31,17 @@ System.register(['angular2/core', 'angular2/router', './services/my-image.servic
             },
             function (my_trip_component_1_1) {
                 my_trip_component_1 = my_trip_component_1_1;
+            },
+            function (my_utility_service_1_1) {
+                my_utility_service_1 = my_utility_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_router) {
+                function AppComponent(_router, _utility) {
                     this._router = _router;
+                    this._utility = _utility;
                     this.title = 'Tour of Heroes';
                 }
-                AppComponent.prototype.gotoTripMainPage = function (tripId) {
-                    var link = ['TripMainPage', { id: tripId }];
-                    this._router.navigate(link);
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
@@ -50,7 +50,8 @@ System.register(['angular2/core', 'angular2/router', './services/my-image.servic
                         providers: [
                             router_1.ROUTER_PROVIDERS,
                             my_image_service_1.MyImageService,
-                            my_trip_service_1.MyTripService
+                            my_trip_service_1.MyTripService,
+                            my_utility_service_1.MyUtilityService
                         ]
                     }),
                     router_1.RouteConfig([
@@ -71,7 +72,7 @@ System.register(['angular2/core', 'angular2/router', './services/my-image.servic
                             useAsDefault: true
                         },
                     ]), 
-                    __metadata('design:paramtypes', [router_1.Router])
+                    __metadata('design:paramtypes', [router_1.Router, my_utility_service_1.MyUtilityService])
                 ], AppComponent);
                 return AppComponent;
             }());

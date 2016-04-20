@@ -5,6 +5,7 @@ import { MyTripService } from './services/my-trip.service';
 import {MyImageComponent} from './components/my-image.component';
 import {MyTripComponent} from './components/my-trip.component';
 import {MyTrip} from './base_class/myTrip';
+import {MyUtilityService} from './services/my-utility.service';
 
 @Component({
   selector: 'my-app',
@@ -13,7 +14,8 @@ import {MyTrip} from './base_class/myTrip';
   providers: [
 			ROUTER_PROVIDERS,
       MyImageService,
-      MyTripService
+      MyTripService,
+      MyUtilityService
 			]
 })
 
@@ -38,10 +40,9 @@ import {MyTrip} from './base_class/myTrip';
 export class AppComponent {
   title = 'Tour of Heroes';
 
-  constructor(private _router: Router) {}
+  constructor(private _router: Router, private _utility: MyUtilityService) {}
 
-  gotoTripMainPage(tripId:number){
-		let link = ['TripMainPage', {id: tripId}];
-		this._router.navigate(link);
-	}
+  /*gotoTripMainPage(tripId:number){
+		this._utility.gotoTripMainPage(tripId);
+	}*/
 }

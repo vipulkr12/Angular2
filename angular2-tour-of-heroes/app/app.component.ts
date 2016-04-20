@@ -43,9 +43,5 @@ import { HeroDetailComponent} from './hero-detail.component';
 export class  AppComponent implements OnInit {
   title = 'Tour of Heroes';
 
-  ngOnInit(){
-    /*let tourId =+ this._routeParams.get("id");
-    this._myTripservice.getTripFromId(tourId)
-    .then(currentTrip => this.currentTrip = currentTrip);*/
-  }
+  ngOnInit(){}
 }
