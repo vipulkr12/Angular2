@@ -39,10 +39,8 @@ import {MyUtilityService} from './services/my-utility.service';
 ])
 export class AppComponent {
   title = 'Tour of Heroes';
+  id = 61000;
 
-  constructor(private _router: Router, private _utility: MyUtilityService) {}
-
-  /*gotoTripMainPage(tripId:number){
-		this._utility.gotoTripMainPage(tripId);
-	}*/
+  constructor(private _router: Router, private _utility: MyUtilityService) {
+  }
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {MyTrip} from '../base_class/myTrip';
 import {RouteParams} from 'angular2/router';
 import {MyTripService} from '../services/my-trip.service';
+import {MyUtilityService} from '../services/my-utility.service';
 
 @Component ({
   selector: 'my-trip-detail',
@@ -16,7 +17,8 @@ export class MyTripComponent implements OnInit {
 
   constructor(
     private _routeParams: RouteParams,
-    private _myTripservice: MyTripService
+    private _myTripservice: MyTripService,
+    private _utility: MyUtilityService
   ) {
   }
 

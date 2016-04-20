@@ -41,6 +41,7 @@ System.register(['angular2/core', 'angular2/router', './services/my-image.servic
                     this._router = _router;
                     this._utility = _utility;
                     this.title = 'Tour of Heroes';
+                    this.id = 61000;
                 }
                 AppComponent = __decorate([
                     core_1.Component({

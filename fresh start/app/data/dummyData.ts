@@ -45,6 +45,6 @@ export var allTrip: MyTrip[] = [
       "title": "main trip",
       "description": "My List of trips",
       "tripImagesId": [],
-      "childTripId": [60000]
+      "childTripId": [60000,61000]
     }
 ]

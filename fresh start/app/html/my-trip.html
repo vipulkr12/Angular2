@@ -1,2 +1,6 @@
 <h1>{{title}}</h1>
 <h1>{{currentTrip.title}}</h1>
+
+<div *ngFor = "#childId of currentTrip.childTripId">
+  <div (click)="_utility.gotoTripMainPage(childId)"> {{childId}} hxfxfhxf</div>
+</div>

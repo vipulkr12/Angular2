@@ -27,6 +27,13 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 }
                 MyUtilityService.prototype.gotoTripMainPage = function (tripId) {
                     var link = ['TripMainPage', { id: tripId }];
+                    console.log("This should get printed");
+                    this._router.navigate(link);
+                };
+                MyUtilityService.prototype.gotoChildTrip = function (parentTrip) {
+                    var tripId = parentTrip.childTripId[0];
+                    var link = ['TripMainPage', { id: tripId }];
+                    console.log("Hello");
                     this._router.navigate(link);
                 };
                 MyUtilityService = __decorate([

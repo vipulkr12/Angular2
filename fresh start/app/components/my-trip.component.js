@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../services/my-trip.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../services/my-trip.service', '../services/my-utility.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../services/my-trip.servic
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, my_trip_service_1;
+    var core_1, router_1, my_trip_service_1, my_utility_service_1;
     var MyTripComponent;
     return {
         setters:[
@@ -22,12 +22,16 @@ System.register(['angular2/core', 'angular2/router', '../services/my-trip.servic
             },
             function (my_trip_service_1_1) {
                 my_trip_service_1 = my_trip_service_1_1;
+            },
+            function (my_utility_service_1_1) {
+                my_utility_service_1 = my_utility_service_1_1;
             }],
         execute: function() {
             MyTripComponent = (function () {
-                function MyTripComponent(_routeParams, _myTripservice) {
+                function MyTripComponent(_routeParams, _myTripservice, _utility) {
                     this._routeParams = _routeParams;
                     this._myTripservice = _myTripservice;
+                    this._utility = _utility;
                     this.currentTrip = {};
                     this.title = 'hopefully this will work';
                 }
@@ -42,7 +46,7 @@ System.register(['angular2/core', 'angular2/router', '../services/my-trip.servic
                         selector: 'my-trip-detail',
                         templateUrl: 'app/html/my-trip.html'
                     }), 
-                    __metadata('design:paramtypes', [router_1.RouteParams, my_trip_service_1.MyTripService])
+                    __metadata('design:paramtypes', [router_1.RouteParams, my_trip_service_1.MyTripService, my_utility_service_1.MyUtilityService])
                 ], MyTripComponent);
                 return MyTripComponent;
             }());
