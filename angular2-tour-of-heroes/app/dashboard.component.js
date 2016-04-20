@@ -29,6 +29,7 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                     this._router = _router;
                     this._heroService = _heroService;
                     this.heroes = [];
+                    this.title = ["what is happening"];
                 }
                 DashboardComponent.prototype.ngOnInit = function () {
                     var _this = this;

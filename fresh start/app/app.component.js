@@ -34,9 +34,14 @@ System.register(['angular2/core', 'angular2/router', './services/my-image.servic
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_router) {
+                    this._router = _router;
                     this.title = 'Tour of Heroes';
                 }
+                AppComponent.prototype.gotoTripMainPage = function (tripId) {
+                    var link = ['TripMainPage', { id: tripId }];
+                    this._router.navigate(link);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
@@ -55,13 +60,18 @@ System.register(['angular2/core', 'angular2/router', './services/my-image.servic
                             component: my_trip_component_1.MyTripComponent
                         },
                         {
+                            path: '/trips/:id',
+                            name: 'TripMainPage',
+                            component: my_trip_component_1.MyTripComponent
+                        },
+                        {
                             path: '/images',
                             name: 'Image',
                             component: my_image_component_1.MyImageComponent,
                             useAsDefault: true
                         },
                     ]), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [router_1.Router])
                 ], AppComponent);
                 return AppComponent;
             }());

@@ -10,12 +10,15 @@ import {MyTripService} from '../services/my-trip.service';
 
 export class MyTripComponent implements OnInit {
 
-  currentTrip: MyTrip;
+  currentTrip:any ={};
+
+  title : string = 'hopefully this will work';
 
   constructor(
     private _routeParams: RouteParams,
     private _myTripservice: MyTripService
-  ) {  }
+  ) {
+  }
 
   ngOnInit(){
     let tourId =+ this._routeParams.get("id");

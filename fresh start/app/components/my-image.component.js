@@ -28,6 +28,8 @@ System.register(['angular2/core', 'angular2/router', '../services/my-image.servi
                 function MyImageComponent(_myImageService, _routeParams) {
                     this._myImageService = _myImageService;
                     this._routeParams = _routeParams;
+                    this.title = '';
+                    this.title = "shshsfh";
                 }
                 MyImageComponent.prototype.ngOnInit = function () {
                     var _this = this;

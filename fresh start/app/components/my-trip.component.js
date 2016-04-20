@@ -28,6 +28,8 @@ System.register(['angular2/core', 'angular2/router', '../services/my-trip.servic
                 function MyTripComponent(_routeParams, _myTripservice) {
                     this._routeParams = _routeParams;
                     this._myTripservice = _myTripservice;
+                    this.currentTrip = {};
+                    this.title = 'hopefully this will work';
                 }
                 MyTripComponent.prototype.ngOnInit = function () {
                     var _this = this;

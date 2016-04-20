@@ -1,4 +1,4 @@
-import { Component }       from 'angular2/core';
+import { Component, OnInit }       from 'angular2/core';
 import { HeroService }     from './hero.service';
 import { HeroesComponent } from './heroes.component';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
@@ -40,6 +40,12 @@ import { HeroDetailComponent} from './hero-detail.component';
 		component: HeroDetailComponent
 	}
 ])
-export class AppComponent {
+export class  AppComponent implements OnInit {
   title = 'Tour of Heroes';
+
+  ngOnInit(){
+    /*let tourId =+ this._routeParams.get("id");
+    this._myTripservice.getTripFromId(tourId)
+    .then(currentTrip => this.currentTrip = currentTrip);*/
+  }
 }

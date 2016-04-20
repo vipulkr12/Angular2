@@ -11,9 +11,13 @@ import {MyImageService} from '../services/my-image.service';
 export class MyImageComponent implements OnInit {
   currentImage: MyImage;
 
+
+  title : string = '';
+
   constructor(
     private _myImageService: MyImageService,
     private _routeParams:RouteParams) {
+      this.title = "shshsfh";
     }
 
   ngOnInit(){

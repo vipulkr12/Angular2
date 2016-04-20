@@ -2,6 +2,7 @@ Base template
 
 <h1>{{title}}</h1>
 <nav>
+  <div (click)="gotoTripMainPage(0)"> Main Trip </div>
   <a [routerLink] = "['Trip']">Trip</a>
   <a [routerLink] = "['Image']">Image</a>
 </nav>

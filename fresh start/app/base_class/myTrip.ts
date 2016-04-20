@@ -5,6 +5,6 @@ export class MyTrip {
   title: string;
   description: string;
 
-  tripImages: MyImage[];
-  childTrip: MyTrip[];
+  tripImagesId: number[];
+  childTripId: number[];
 }

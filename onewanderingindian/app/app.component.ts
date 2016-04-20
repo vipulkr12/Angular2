@@ -1,5 +1,5 @@
 import { Component }       from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router} from 'angular2/router';
 import {MyTripComponent} from './components/my-trip.component';
 import {MyImageComponent} from './components/my-image.component';
 import {MyImageService} from './services/my-image.service';

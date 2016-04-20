@@ -1,7 +1,7 @@
 import {MyImage} from '../base_class/myimage';
 import {MyTrip} from '../base_class/myTrip';
 
-export var lijiangImages: MyImage[] = [
+export var allImages: MyImage[] = [
   {"id": 61001,
     "src": "/china/china_61001",
     "title": "first",
@@ -25,26 +25,26 @@ export var lijiangImages: MyImage[] = [
   }
 ]
 
-export var lijiangTrip: MyTrip =  {
-    "id": 61000,
-    "title": "The lijiang trip",
-    "description": "My visit to lijiang",
-    "tripImages": lijiangImages,
-    "childTrip": []
-  }
-
-export var chinaTrip: MyTrip = {
-  "id": 60000,
-  "title": "The china trip",
-  "description": "My visit to china",
-  "tripImages": [],
-  "childTrip": [lijiangTrip]
-}
-
-export var mainTrip: MyTrip = {
-  "id": 0,
-  "title": "main trip",
-  "description": "My List of trips",
-  "tripImages": [],
-  "childTrip": [chinaTrip]
-}
+export var allTrip: MyTrip[] = [
+  {
+      "id": 61000,
+      "title": "The lijiang trip",
+      "description": "My visit to lijiang",
+      "tripImagesId": [61001, 61002, 61003],
+      "childTripId": []
+    },
+    {
+      "id": 60000,
+      "title": "The china trip",
+      "description": "My visit to china",
+      "tripImagesId": [],
+      "childTripId": [61000]
+    },
+    {
+      "id": 0,
+      "title": "main trip",
+      "description": "My List of trips",
+      "tripImagesId": [],
+      "childTripId": [60000]
+    }
+]
